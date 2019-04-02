@@ -10,7 +10,7 @@
                     <th :style="{'width':'150px'}">收费金额</th>
                     <th :style="{'width':'150px'}">收费状态</th>
                     <th :style="{'width':'350px'}">方案说明</th> -->
-                    <th v-for="item in titles" :style="{'width':item.width,'textAlign':item.textleft?item.textleft:'','paddingLeft':item.paddingLeft?item.paddingLeft:''}">{{ item.name }}</th>
+                    <th v-for="item in titles" :style="{'width':item.width,'textAlign':item.textleft?item.textleft:'','paddingLeft':item.paddingLeft?item.paddingLeft:''}" :key="item.id">{{ item.name }}</th>
                     <th :style="{'width':'262px'}">操作</th>
                 </tr>
             </thead>
@@ -81,15 +81,15 @@
           }
         },
         data(){
-            return {
-              srcImg:'',
-                status:0,
-                tabledata:[],
-                right:true,
-                id:'',
-                checkAll:'',
-                dataArr:[]
-            }
+          return {
+            srcImg:'',
+            status:0,
+            tabledata:[],
+            right:true,
+            id:'',
+            checkAll:'',
+            dataArr:[]
+          }
         },
         created(){
             // eventBus.$on('deleteAllBulletinList', params => {
